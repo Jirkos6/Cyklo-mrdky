@@ -4,7 +4,7 @@
 
 
 
-<table id="riderTable" class="display" style="width:100%">
+<table id="riderTable" class="table table-striped" style="width:65%">
     <thead>
         <tr>
             <th>Jméno</th>
@@ -25,6 +25,7 @@
 </table>
 
     <script>
+
 new DataTable('#riderTable')
 </script>
 @endsection
