@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.tailwindcss.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>CycloDB</title>
+    <title>CykloDB</title>
     <meta charset="UTF-8">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -18,7 +18,7 @@
             <div class="flex shrink-0">
                 <a aria-current="page" class="flex items-center" href="/">
                 <i class="fa-solid fa-person-biking"></i>
-                    <p class="sr-only">CycloDB</p>
+                    <p class="sr-only">CykloDB</p>
                 </a>
             </div>
             <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
@@ -27,6 +27,15 @@
                     href="/riders">Cyklisti</a>
                 <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
                     href="/teams">Týmy</a>
+                    @auth
+                    <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                    href="/rider/create">Přidávání Cyklistů</a>
+                    <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                    href="/download-pdf">PDF na stáhnutí</a>
+                    <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                    href="/download-excel">Excel na stáhnutí</a>
+                    
+                    @endauth
             </div>
             <div class="flex items-center justify-end gap-3">
             @guest
@@ -56,6 +65,8 @@
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
   crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/2.1.5/js/dataTables.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     </body>
 </html>
 @yield('content')

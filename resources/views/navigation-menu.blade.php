@@ -15,6 +15,18 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('riders') }}" :active="request()->routeIs('riders')">
+                        {{ __('Cyklisti') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('teams') }}" :active="request()->routeIs('teams')">
+                        {{ __('Týmy') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('create') }}" :active="request()->routeIs('create')">
+                        {{ __('Přidávání Cyklistů') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('dashboard-tinymce') }}" :active="request()->routeIs('dashboard-tinymce')">
+                        {{ __('TinyMCE') }}
+                    </x-nav-link>
                 </div>
             </div>
 

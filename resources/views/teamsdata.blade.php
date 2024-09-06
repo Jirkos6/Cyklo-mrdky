@@ -32,7 +32,7 @@
                 @foreach ($data as $item)
                     <tr class="border-b">
 
-                        <td class="py-2 px-4">{{ $item->first_name }} {{ $item->last_name }}</td>
+                     <td class="py-2 px-4"><a href="/riders/ {{ $item->id }}">{{ $item->first_name }} {{ $item->last_name }}</a></td>
                     </tr>
                 @endforeach
             </tbody>

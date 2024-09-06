@@ -9,7 +9,7 @@
     <div
       class="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none bg-clip-border rounded-xl shrink-0">
       <img
-        src="{{ asset('obrazky/' . $data->rider_foto_year) }}"
+        src="{{ asset('obrazky/' . $data->photo) }}"
         alt="card-image" class="object-cover w-full h-full" />
     </div>
     <div class="p-6">
@@ -18,7 +18,7 @@
         {{ $data->first_name }} {{ $data->last_name }}
       </h6>
       <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-        Tým: {{ $data->name }}
+        Tým: <a href="/teams/{{$data->team_team_id}}">{{ $data->name }}</a>
       </h4>
       <p class="block mb-8 font-sans text-base antialiased font-semibold leading-relaxed text-gray-700">
       Datum narození: {{ $data->date_of_birth }} <br>

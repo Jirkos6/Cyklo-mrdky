@@ -14,7 +14,7 @@
       
         @foreach($data as $teams)
         <tr>
- <td><a href="/teams/{{ $teams->id }}">>{{ $teams->actual_name }} </a></td>
+ <td><a href="/teams/{{$teams->id}}">{{ $teams->actual_name }}</td></a>
 </tr>
  @endforeach
 
