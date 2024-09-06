@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css"/>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.tailwindcss.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
+/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>CykloDB</title>
     <meta charset="UTF-8">
@@ -20,8 +24,10 @@
                 <i class="fa-solid fa-person-biking"></i>
                     <p class="sr-only">CykloDB</p>
                 </a>
+                <span class="fi fi-cz ml-5"></span>
             </div>
             <div class="hidden md:flex md:items-center md:justify-center md:gap-5">
+            
                 <a aria-current="page"
                     class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
                     href="/riders">Cyklisti</a>
@@ -34,7 +40,6 @@
                     href="/download-pdf">PDF na stáhnutí</a>
                     <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
                     href="/download-excel">Excel na stáhnutí</a>
-                    
                     @endauth
             </div>
             <div class="flex items-center justify-end gap-3">
