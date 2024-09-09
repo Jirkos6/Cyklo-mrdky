@@ -14,4 +14,8 @@ class Team extends Model
     protected $fillable = ['actual_name']; 
 
     use SoftDeletes;
+    public function teamYears()
+    {
+        return $this->hasMany(TeamYear::class, 'id_team');
+    }
 }

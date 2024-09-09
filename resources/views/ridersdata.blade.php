@@ -4,6 +4,8 @@
 
 
 
+
+
 <div class="flex justify-center items-center ">
   <div class="flex bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full max-w-[48rem] flex-row ">
     <div
@@ -18,7 +20,7 @@
         {{ $data->first_name }} {{ $data->last_name }}
       </h6>
       <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-        Tým: <a href="/teams/{{$data->team_team_id}}">{{ $data->name }}</a>
+        Tým: <a href="/teams/{{$data->team_year_id}}">{{ $data->name }}</a>
       </h4>
       <p class="block mb-8 font-sans text-base antialiased font-semibold leading-relaxed text-gray-700">
       Datum narození: {{ $data->date_of_birth }} <br>
@@ -36,8 +38,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 
