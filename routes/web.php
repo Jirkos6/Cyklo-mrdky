@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RiderController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RaceController;
 use App\Http\Controllers\PdfController;
 Route::get('/', [RiderController::class, 'welcome'])->name('welcome');
 Route::get('/rider-pdf', [PdfController::class, 'streamRiderPDF']);
@@ -13,6 +14,10 @@ Route::get('/download-pdf', [PdfController::class, 'regeneratePDFs'])->name('dow
 Route::get('/export-riders', [RiderController::class, 'exportRiders'])->name('export.riders');
 Route::get('/riders/{id}', [RiderController::class, 'ridersdata'])->name('ridersdata');
 Route::get('/teams/{id}', [TeamController::class, 'teamsdata'])->name('teamsdata');
+Route::get('/race', [RaceController::class, 'race'])->name('race');
+Route::get('/races/{id}', [RaceController::class, 'races'])->name('races');
+Route::get('/stages/{id}', [RaceController::class, 'stages'])->name('stages');
+Route::get('/result/{id}', [RaceController::class, 'result'])->name('result');
 
 Route::middleware([
     'auth:sanctum',

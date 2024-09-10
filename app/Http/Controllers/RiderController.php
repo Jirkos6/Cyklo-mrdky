@@ -33,10 +33,25 @@ function ridersdata($id) {
         ->select(
             'rider.*', 'team_year.*', 'team.*','rider_team_year.*','team.id as team_id_id','team_year.id as team_year_id','rider.id as rider_id'  
         )
-        ->where('rider.id', $id)  
+        ->where('rider.id', $id)   
         ->first();
+        $stagesData = Rider::leftJoin('result', 'rider.id', '=', 'result.id_rider') 
+        ->leftJoin('stage', 'result.id_stage', '=', 'stage.id') 
+        ->leftJoin('race_year', 'stage.id_race_year', '=', 'race_year.id') 
+        ->select(
+            'result.rank', 
+            'stage.number as stage_number',
+            'stage.date', 
+            'stage.distance', 
+            'race_year.real_name as race_name',     
+            'result.id_stage as stage_id' 
+        )
+        ->where('rider.id', $id)  
+        ->get(); 
+   
+ 
 
-return view ('ridersdata', ['data' => $data]);
+return view ('ridersdata', ['data' => $data, 'stagesData' => $stagesData]);
 
 }
     public function create()

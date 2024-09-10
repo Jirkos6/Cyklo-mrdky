@@ -38,6 +38,34 @@
     </div>
   </div>
 </div>
+<table id="raceTable" class="table table-striped" style="width:65%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Číslo</th>
+            <th>Datum</th>
+            <th>Vzdálenost</th>
+            <th>Název závodu</th>
+            <th>Pozice</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($stagesData as $stage)
+        <tr>
+            <td>{{ $stage->stage_id }}</td>
+            <td>{{ $stage->stage_number }}</td>
+            <td>{{ $stage->date }}</td>
+            <td>{{ $stage->distance }}</td>
+            <td>{{ $stage->race_name }}</td>
+            <td>{{ $stage->rank }}</td>
+        </tr> 
+        @endforeach
+    </tbody>
+</table>
+
+<script>
+new DataTable('#raceTable');
+</script>
 
 
 
