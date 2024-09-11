@@ -38,11 +38,16 @@
     </div>
   </div>
 </div>
+<div class="flex justify-center items-center ">
+<h4 class="mt-10 block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+        Výsledky závodů</a>
+      </h4>
+</div>
 <table id="raceTable" class="table table-striped" style="width:65%">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Číslo</th>
+            <th>Tým</th>
+            <th>Číslo Etapy</th>
             <th>Datum</th>
             <th>Vzdálenost</th>
             <th>Název závodu</th>
@@ -52,12 +57,39 @@
     <tbody>
         @foreach($stagesData as $stage)
         <tr>
-            <td>{{ $stage->stage_id }}</td>
+            <td>{{ $stage->actual_name }}</td>
             <td>{{ $stage->stage_number }}</td>
             <td>{{ $stage->date }}</td>
-            <td>{{ $stage->distance }}</td>
+            <td>{{ $stage->distance }} km</td>
             <td>{{ $stage->race_name }}</td>
             <td>{{ $stage->rank }}</td>
+        </tr> 
+        @endforeach
+    </tbody>
+</table>
+<div class="flex justify-center items-center">
+<h4 class="mt-10 block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+        Historie týmů</a>
+      </h4>
+      </div>
+<table id="teamTable" class="table table-striped" style="width:65%">
+    <thead>
+        <tr>
+            <th>Tým</th>
+            <th>Rok</th>
+            <th>Dres</th>
+            <th>Zkratka</th>
+            <th>Odkaz</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($teamHistory as $item)
+        <tr>
+            <td>{{ $item->actual_name }}</td>
+            <td>{{ $item->year }}</td>
+            <td>{{ $item->jersey }}</td>
+            <td>{{ $item->abbreviation }}</td>
+            <td><a href="{{ $item->link }}">{{ $item->link }}</a></td>
         </tr> 
         @endforeach
     </tbody>
@@ -65,6 +97,7 @@
 
 <script>
 new DataTable('#raceTable');
+new DataTable('#teamTable');
 </script>
 
 

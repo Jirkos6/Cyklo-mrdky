@@ -36,10 +36,12 @@ function ridersdata($id) {
         ->where('rider.id', $id)   
         ->first();
         $stagesData = Rider::leftJoin('result', 'rider.id', '=', 'result.id_rider') 
-        ->leftJoin('stage', 'result.id_stage', '=', 'stage.id') 
+        ->leftJoin('stage', 'result.id_stage', '=', 'stage.id')->leftJoin('team', 'result.id_team', '=', 'team.id')  
         ->leftJoin('race_year', 'stage.id_race_year', '=', 'race_year.id') 
+        ->leftJoin('race', 'race_year.id_race', '=', 'race.id') 
         ->select(
             'result.rank', 
+            'team.*',
             'stage.number as stage_number',
             'stage.date', 
             'stage.distance', 
@@ -47,11 +49,16 @@ function ridersdata($id) {
             'result.id_stage as stage_id' 
         )
         ->where('rider.id', $id)  
-        ->get(); 
+        ->get();
+        $teamHistory = Rider::leftJoin('rider_team_year', 'rider.id', '=', 'rider_team_year.id_rider')->leftJoin('team_year','rider_team_year.id_team_year','=','team_year.id')->leftJoin('team','team_year.id_team','=','team.id')->select(
+            'team.*',
+            'team_year.*'
+        )->where('rider.id',$id)->get();
+
    
  
 
-return view ('ridersdata', ['data' => $data, 'stagesData' => $stagesData]);
+return view ('ridersdata', ['data' => $data, 'stagesData' => $stagesData, 'teamHistory' => $teamHistory]);
 
 }
     public function create()

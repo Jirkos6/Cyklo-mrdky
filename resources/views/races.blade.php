@@ -12,7 +12,6 @@
             <th>Název</th>
             <th>Rok</th>
             <th>Doba konání</th>
-            <th>Typ</th>
             <th>Sex</th>
             <th>Kategorie</th>
             <th>Země</th>
@@ -26,7 +25,6 @@
  <td><a href="/stages/{{ $race->id }}">{{ $race->real_name }}</a></td>
  <td>{{ $race->year }}</td>
  <td>{{ $race->start_date }} - {{ $race->end_date }}</td>
- <td>{{ $race->type }}</td>
  <td>{{ $race->sex }}</td>
  <td>{{ $race->category }}</td>
  <td><span class="fi fi-{{ $race->country }}"></span></td>
