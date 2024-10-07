@@ -24,7 +24,13 @@
         <tr>
  <td><a href="/stages/{{ $race->id }}">{{ $race->real_name }}</a></td>
  <td>{{ $race->year }}</td>
+ @if ($race->start_date == $race->end_date)
+ 
+ <td>{{ $race->start_date }}</td>
+ @else
  <td>{{ $race->start_date }} - {{ $race->end_date }}</td>
+ @endif
+ 
  <td>{{ $race->sex }}</td>
  <td>{{ $race->category }}</td>
  <td><span class="fi fi-{{ $race->country }}"></span></td>
